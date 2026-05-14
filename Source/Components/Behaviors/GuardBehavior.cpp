@@ -6,7 +6,7 @@
 \brief
     This file contains the behavior component and the state machine belonging to
     the Guard Drone.
-      Copyright © 2022 DigiPen (USA) Corporation.
+      Copyright Â© 2022 DigiPen (USA) Corporation.
 
 *******************************************************************************/
 #include "Sprite.h"
@@ -139,64 +139,6 @@ namespace FFunctional
         SetNextState(GuardState::Puzzle);
     }
   }
-
-  /*void GuardMovement::UpdateAlertedPosition(float dt)
-  {
-    Transform& guardTransform = parent_.ComponentGet<Transform>();
-    glm::vec3 guardTranslation = *guardTransform.GetTranslation();
-    glm::vec3 pos = *investigateEntity_.ComponentGet<Transform>().GetTranslation();
-
-    alertCounter_ += dt / detectTime_;
-  }
-
-
-  static float sig(float f)
-  {
-    float e_x = std::pow(2.71828f, f);
-    return e_x / (e_x + 1);
-  }
-
-  void GuardMovement::UpdateInvestigating(float dt)
-  {
-    dt;
-    Transform& guardTransform = parent_.ComponentGet<Transform>();
-    glm::vec3 guardTranslation = *guardTransform.GetTranslation();
-
-    glm::vec3 pos = *investigateEntity_.ComponentGet<Transform>().GetTranslation();
-
-    float distance = glm::distance(pos, guardTranslation);
-
-    StealthBar::SetFill(alertCounter_);
-
-
-    if (alertCounter_ < 2.0f)
-    {
-      if (speed_ * dt > distance)
-        return;
-
-      
-      glm::vec3 direction = glm::normalize(pos - guardTranslation) * 2.0f*(sig(distance) - 0.5f);
-      direction *= speed_;
-      Physics& guardPhysics = parent_.ComponentGet<Physics>();
-
-      float dot = glm::dot(glm::normalize(direction), glm::normalize(*guardPhysics.GetVelocity()));
-      if (dot < 0.0f)
-      {
-        glm::vec3 vel = (*guardPhysics.GetVelocity())*(1 + 0.25f*dot);
-        guardPhysics.SetVelocity(&vel);
-      }
-
-
-      direction = glm::normalize(direction) * speed_;
-      guardPhysics.SetAcceleration(&direction);
-    }
-    else
-    {
-      caught_ = true;
-    }
-
-
-  }*/
 
   bool GuardMovement::GetCaught() const
   {
